@@ -1,0 +1,16 @@
+# Downloaded AL dependencies and build output
+.alpackages/
+bin/
+obj/
+
+# Local secrets and certificates
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+
+# Operating system files
+.DS_Store
+Thumbs.db
