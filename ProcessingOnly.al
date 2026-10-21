@@ -19,6 +19,7 @@ report 94002 "Fill Sales Gen. Prod. Post Grp"
                 if GuiAllowed() then
                     Window.Open(ProgressMsg);
             end;
+
             trigger OnAfterGetRecord()
             var
                 SalesHeader: Record "Sales Header";
@@ -49,6 +50,7 @@ report 94002 "Fill Sales Gen. Prod. Post Grp"
                 Modify(true);
                 UpdatedCount += 1;
             end;
+
             trigger OnPostDataItem()
             begin
                 if GuiAllowed() then begin
@@ -84,6 +86,7 @@ report 94002 "Fill Sales Gen. Prod. Post Grp"
             if not Confirm(ConfirmQst, false) then
                 CurrReport.Quit();
     end;
+
     var
         Window: Dialog;
         CreateMissingGroups: Boolean;
@@ -95,7 +98,7 @@ report 94002 "Fill Sales Gen. Prod. Post Grp"
         ConfirmQst: Label 'G/L Account sales lines with a blank Gen. Prod. Posting Group will get their No. as the posting group. Continue?';
         DoneMsg: Label 'Lines updated: %1\Posting groups created: %2\Lines skipped (document not Open): %3\Lines skipped (no matching posting group): %4';
 }
-report 94003 "Fill Purch. Gen. Prod. Post Grp"
+report 94003 "Fill PurchGen Prod Post Grp"
 {
     Caption = 'Fill Gen. Prod. Posting Group on Purchase Lines';
     ProcessingOnly = true;
@@ -116,6 +119,7 @@ report 94003 "Fill Purch. Gen. Prod. Post Grp"
                 if GuiAllowed() then
                     Window.Open(ProgressMsg);
             end;
+
             trigger OnAfterGetRecord()
             var
                 PurchaseHeader: Record "Purchase Header";
@@ -146,6 +150,7 @@ report 94003 "Fill Purch. Gen. Prod. Post Grp"
                 Modify(true);
                 UpdatedCount += 1;
             end;
+
             trigger OnPostDataItem()
             begin
                 if GuiAllowed() then begin
@@ -181,6 +186,7 @@ report 94003 "Fill Purch. Gen. Prod. Post Grp"
             if not Confirm(ConfirmQst, false) then
                 CurrReport.Quit();
     end;
+
     var
         Window: Dialog;
         CreateMissingGroups: Boolean;
